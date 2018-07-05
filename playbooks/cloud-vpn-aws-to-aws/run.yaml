@@ -1,7 +1,7 @@
 ---
 - hosts: all
 
-  roles:
+  tasks:
     - pip:
         name: ansible
         extra_args: --user
