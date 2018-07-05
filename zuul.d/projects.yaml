@@ -10,3 +10,16 @@
 - project:
     name: ansible/ansible
     default-branch: devel
+
+- project:
+    name: ansible-network/cloud-vpn
+    check:
+      jobs:
+        - linters
+        - cloud-vpn-aws-vyos-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vpn
+    gate:
+      jobs:
+        - linters
+        - cloud-vpn-aws-vyos-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vpn
