@@ -18,8 +18,10 @@
         - linters
         - cloud-vpn-aws-vyos-to-aws-vpn
         - cloud-vpn-aws-csr-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vyos
     gate:
       jobs:
         - linters
         - cloud-vpn-aws-vyos-to-aws-vpn
         - cloud-vpn-aws-csr-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vyos
