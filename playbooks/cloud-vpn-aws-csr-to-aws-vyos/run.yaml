@@ -1,0 +1,6 @@
+---
+- hosts: all
+
+  roles:
+    - role: cloud-vpn-aws-to-aws
+      test_entrypoint: test_aws_csr_to_aws_vyos.yaml

@@ -81,3 +81,14 @@
       nodes:
         name: container
         label: f27-oci
+
+- job:
+    name: cloud-vpn-aws-csr-to-aws-vyos
+    description: Run cloud-vpn AWS CSR to AWS VyOS tests
+    run: playbooks/cloud-vpn-aws-csr-to-aws-vyos/run.yaml
+    secrets:
+      - aws
+    nodeset:
+      nodes:
+        name: container
+        label: f27-oci
