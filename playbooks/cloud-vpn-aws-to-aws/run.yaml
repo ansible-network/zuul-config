@@ -15,7 +15,7 @@
         executable: /usr/bin/pip
 
     - lineinfile:
-        dest: /tmp/secrets.yaml
+        dest: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/secrets.yaml"
         line: "{{ item }}"
         create: True
       no_log: True
