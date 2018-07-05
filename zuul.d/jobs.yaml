@@ -61,31 +61,9 @@
           label: centos-oci
 
 - job:
-    name: cloud-vpn-aws-vyos-to-aws-vpn
-    description: Run cloud-vpn AWS VyOS to AWS VPN tests
-    run: playbooks/cloud-vpn-aws-vyos-to-aws-vpn/run.yaml
-    secrets:
-      - aws
-    nodeset:
-      nodes:
-        name: container
-        label: f27-oci
-
-- job:
-    name: cloud-vpn-aws-csr-to-aws-vpn
-    description: Run cloud-vpn AWS CSR to AWS VPN tests
-    run: playbooks/cloud-vpn-aws-csr-to-aws-vpn/run.yaml
-    secrets:
-      - aws
-    nodeset:
-      nodes:
-        name: container
-        label: f27-oci
-
-- job:
-    name: cloud-vpn-aws-csr-to-aws-vyos
-    description: Run cloud-vpn AWS CSR to AWS VyOS tests
-    run: playbooks/cloud-vpn-aws-csr-to-aws-vyos/run.yaml
+    name: cloud-vpn-aws-to-aws
+    description: Run cloud-vpn AWS to AWS tests
+    run: playbooks/cloud-vpn-aws-to-aws/run.yaml
     secrets:
       - aws
     nodeset:
