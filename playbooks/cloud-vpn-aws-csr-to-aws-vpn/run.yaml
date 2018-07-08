@@ -3,4 +3,4 @@
 
   roles:
     - role: cloud-vpn-integration-tests
-      test_entrypoint: test-aws-csr-to-aws-vpn.yaml
+      test_entrypoint: test_aws_csr_to_aws_vpn.yaml

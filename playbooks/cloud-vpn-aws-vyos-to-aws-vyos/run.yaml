@@ -3,4 +3,4 @@
 
   roles:
     - role: cloud-vpn-integration-tests
-      test_entrypoint: test-aws-vyos-to-aws-vyos.yaml
+      test_entrypoint: test_aws_vyos_to_aws_vyos.yaml
