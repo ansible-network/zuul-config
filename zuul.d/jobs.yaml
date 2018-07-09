@@ -74,6 +74,19 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-2
 
 - job:
+    name: cloud-vpn-aws-csr-to-aws-vpn-bgp
+    description: Run cloud-vpn AWS CSR to AWS VPN with BGP routing tests
+    run: playbooks/cloud-vpn-aws-csr-to-aws-vpn-bgp/run.yaml
+    timeout: 3600
+    secrets:
+      - aws
+    nodeset:
+      nodes:
+        name: container
+        label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-2
+
+- job:
     name: cloud-vpn-aws-csr-to-aws-vyos
     description: Run cloud-vpn AWS CSR to AWS VyOS tests
     run: playbooks/cloud-vpn-aws-csr-to-aws-vyos/run.yaml
