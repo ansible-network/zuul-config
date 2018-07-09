@@ -17,6 +17,7 @@
       jobs:
         - linters
         - cloud-vpn-aws-csr-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vpn-bgp
         - cloud-vpn-aws-csr-to-aws-vyos
         - cloud-vpn-aws-vyos-to-aws-vpn
         - cloud-vpn-aws-vyos-to-aws-vyos
@@ -24,6 +25,7 @@
       jobs:
         - linters
         - cloud-vpn-aws-csr-to-aws-vpn
+        - cloud-vpn-aws-csr-to-aws-vpn-bgp
         - cloud-vpn-aws-csr-to-aws-vyos
         - cloud-vpn-aws-vyos-to-aws-vpn
         - cloud-vpn-aws-vyos-to-aws-vyos
