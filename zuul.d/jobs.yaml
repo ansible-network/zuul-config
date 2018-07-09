@@ -71,6 +71,7 @@
       nodes:
         name: container
         label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-2
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vyos
@@ -83,6 +84,7 @@
       nodes:
         name: container
         label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-2
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vpn
@@ -95,6 +97,7 @@
       nodes:
         name: container
         label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-1
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vyos
@@ -107,3 +110,4 @@
       nodes:
         name: container
         label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-1
