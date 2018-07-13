@@ -1,0 +1,17 @@
+---
+- pip:
+    name: "{{ item }}"
+  with_items:
+    - boto
+    - boto3
+
+- lineinfile:
+    dest: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/secrets.yaml"
+    line: "{{ item }}"
+    create: True
+  no_log: True
+  with_items:
+    - "cloud_vpn_initiator_aws_access_key: {{ aws.access_key }}"
+    - "cloud_vpn_initiator_aws_secret_key: {{ aws.secret_key }}"
+    - "cloud_vpn_responder_aws_access_key: {{ aws.access_key }}"
+    - "cloud_vpn_responder_aws_secret_key: {{ aws.secret_key }}"

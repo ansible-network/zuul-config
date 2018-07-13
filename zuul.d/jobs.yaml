@@ -63,7 +63,8 @@
 - job:
     name: cloud-vpn-aws-csr-to-aws-vpn
     description: Run cloud-vpn AWS CSR to AWS VPN tests
-    run: playbooks/cloud-vpn-aws-csr-to-aws-vpn/run.yaml
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
     timeout: 3600
     secrets:
       - aws
@@ -72,11 +73,14 @@
         name: container
         label: f27-oci
     semaphore: cloud-vpn-aws-to-aws-us-east-2
+    vars:
+      test_entrypoint: test_aws_csr_to_aws_vpn.yaml
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vpn-bgp
     description: Run cloud-vpn AWS CSR to AWS VPN with BGP routing tests
-    run: playbooks/cloud-vpn-aws-csr-to-aws-vpn-bgp/run.yaml
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
     timeout: 3600
     secrets:
       - aws
@@ -85,11 +89,14 @@
         name: container
         label: f27-oci
     semaphore: cloud-vpn-aws-to-aws-us-east-2
+    vars:
+      test_entrypoint: test_aws_csr_to_aws_vpn_bgp.yaml
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vyos
     description: Run cloud-vpn AWS CSR to AWS VyOS tests
-    run: playbooks/cloud-vpn-aws-csr-to-aws-vyos/run.yaml
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
     timeout: 3600
     secrets:
       - aws
@@ -98,11 +105,14 @@
         name: container
         label: f27-oci
     semaphore: cloud-vpn-aws-to-aws-us-east-2
+    vars:
+      test_entrypoint: test_aws_csr_to_aws_vyos.yaml
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vpn
     description: Run cloud-vpn AWS VyOS to AWS VPN tests
-    run: playbooks/cloud-vpn-aws-vyos-to-aws-vpn/run.yaml
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
     timeout: 3600
     secrets:
       - aws
@@ -111,11 +121,14 @@
         name: container
         label: f27-oci
     semaphore: cloud-vpn-aws-to-aws-us-east-1
+    vars:
+      test_entrypoint: test_aws_vyos_to_aws_vpn.yaml
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vyos
     description: Run cloud-vpn AWS VyOS to AWS VyOS tests
-    run: playbooks/cloud-vpn-aws-vyos-to-aws-vyos/run.yaml
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
     timeout: 3600
     secrets:
       - aws
@@ -124,3 +137,21 @@
         name: container
         label: f27-oci
     semaphore: cloud-vpn-aws-to-aws-us-east-1
+    vars:
+      test_entrypoint: test_aws_vyos_to_aws_vyos.yaml
+
+- job:
+    name: cloud-vpn-aws-vyos-to-aws-vyos-bgp
+    description: Run cloud-vpn AWS VyOS to AWS VyOS with BGP routing tests
+    pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
+    run: playbooks/cloud-vpn-integration-tests/run.yaml
+    timeout: 3600
+    secrets:
+      - aws
+    nodeset:
+      nodes:
+        name: container
+        label: f27-oci
+    semaphore: cloud-vpn-aws-to-aws-us-east-1
+    vars:
+      test_entrypoint: test_aws_vyos_to_aws_vyos_bgp.yaml
