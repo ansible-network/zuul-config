@@ -1,9 +1,9 @@
 ---
 - pip:
     name: "{{ item }}"
-      extra_args: --user
-      state: forcereinstall
-      executable: /usr/bin/pip
+    extra_args: --user
+    state: forcereinstall
+    executable: /usr/bin/pip
   with_items:
     - boto
     - boto3
