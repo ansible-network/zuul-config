@@ -5,7 +5,6 @@
     aws_region: us-east-1
     duration_seconds: 3600
   register: session_credentials
-  no_log: True
 
 - lineinfile:
     dest: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/secrets.yaml"
