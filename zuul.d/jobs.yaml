@@ -75,7 +75,7 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn.yaml
-      test_options: "-e 'cloud_vpn_initiator_region=us-east-2 cloud_vpn_responder_region=us-east-2 cloud_vpn_initiator_image_id=ami-e7704f82'"
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-2 cloud_vpn_responder_aws_region=us-east-2 cloud_vpn_initiator_image_id=ami-e7704f82'"
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vpn-bgp
