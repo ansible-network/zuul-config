@@ -92,6 +92,7 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn_bgp.yaml
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-2 cloud_vpn_responder_aws_region=us-east-2 cloud_vpn_initiator_image_id=ami-e7704f82'"
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vyos
@@ -108,6 +109,7 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vyos.yaml
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-2 cloud_vpn_responder_aws_region=us-east-2 cloud_vpn_initiator_image_id=ami-e7704f82 cloud_vpn_responder_image_id=ami-07391762''"
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vpn
@@ -124,6 +126,7 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vpn.yaml
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-1 cloud_vpn_responder_aws_region=us-east-1 cloud_vpn_initiator_image_id=ami-92e86ae8'"
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vyos
@@ -140,6 +143,7 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos.yaml
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-1 cloud_vpn_responder_aws_region=us-east-1 cloud_vpn_initiator_image_id=ami-92e86ae8 cloud_vpn_responder_image_id=ami-92e86ae8''"
 
 - job:
     name: cloud-vpn-aws-vyos-to-aws-vyos-bgp
@@ -156,3 +160,4 @@
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos_bgp.yaml
+      test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-1 cloud_vpn_responder_aws_region=us-east-1 cloud_vpn_initiator_image_id=ami-92e86ae8 cloud_vpn_responder_image_id=ami-92e86ae8''"
