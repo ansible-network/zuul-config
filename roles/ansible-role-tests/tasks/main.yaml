@@ -1,0 +1,20 @@
+---
+- pip:
+    name: ansible
+    extra_args: --user
+    state: forcereinstall
+    executable: /usr/bin/pip
+
+- pip:
+    requirements: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/requirements.txt"
+    extra_args: --user
+    state: forcereinstall
+    executable: /usr/bin/pip
+
+- command: "/home/zuul-worker/.local/bin/ansible-playbook {{ item }} {{ test_extravars | default() }}"
+  args:
+    chdir: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/"
+  with_first_found:
+    - {{ test_entrypoint }}
+    - test.yaml
+    - tests.yaml
