@@ -8,13 +8,22 @@
     - boto
     - boto3
 
+- sts_session_token:
+    aws_access_key: "{{ aws.access_key }}"
+    aws_secret_key: "{{ aws.secret_key }}"
+    aws_region: us-east-1
+    duration_seconds: 3600
+  register: session_credentials
+
 - lineinfile:
     dest: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/secrets.yaml"
     line: "{{ item }}"
     create: True
   no_log: True
   with_items:
-    - "cloud_vpn_initiator_aws_access_key: {{ aws.access_key }}"
-    - "cloud_vpn_initiator_aws_secret_key: {{ aws.secret_key }}"
-    - "cloud_vpn_responder_aws_access_key: {{ aws.access_key }}"
-    - "cloud_vpn_responder_aws_secret_key: {{ aws.secret_key }}"
+    - "cloud_vpn_initiator_aws_access_key: {{ session_credentials.sts_creds.access_key }}"
+    - "cloud_vpn_initiator_aws_secret_key: {{ session_credentials.sts_creds.secret_key }}"
+    - "cloud_vpn_initiator_aws_security_token: {{ session_credentials.sts_creds.session_token }}"
+    - "cloud_vpn_responder_aws_access_key: {{ session_credentials.sts_creds.access_key }}"
+    - "cloud_vpn_responder_aws_secret_key: {{ session_credentials.sts_creds.secret_key }}"
+    - "cloud_vpn_responder_aws_security_token: {{ session_credentials.sts_creds.session_token }}"
