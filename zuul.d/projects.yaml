@@ -8,10 +8,6 @@
         - linters
 
 - project:
-    name: ansible/ansible
-    default-branch: devel
-
-- project:
     name: ansible-network/cloud-vpn
     check:
       jobs:
