@@ -8,7 +8,7 @@
         - linters
 
 - project:
-    name: ansible-network/cloud-vpn
+    name: ansible-network/cloud_vpn
     check:
       jobs:
         - linters
