@@ -1,0 +1,9 @@
+- name: Remove Ansible images private key
+  copy:
+    path: "{{ ansible_user_dir }}/ansible-images"
+    state: absent
+
+- name: Remove Ansible images public key
+  file:
+    path: "{{ ansible_user_dir }}/ansible-images.pub"
+    state: absent

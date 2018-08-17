@@ -11,3 +11,9 @@
   tasks:
     - include_role:
         role: inject-pubkey-on-appliance
+
+- hosts: controller
+
+  tasks:
+    - include_role:
+        role: remove-ansible-images-keys

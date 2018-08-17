@@ -1,15 +1,10 @@
-- name: Create .ssh folder
-  file:
-    path: "{{ ansible_user_dir }}/.ssh"
-    state: directory
-
 - name: Dump Ansible images private key
   copy:
-    dest: "{{ ansible_user_dir }}/.ssh"
+    dest: "{{ ansible_user_dir }}/ansible-images"
     content: "{{ ansible-images.private_key | trim }}"
     mode: 0400
 
 - name: Dump Ansible images public key
   copy:
-    dest: "{{ ansible_user_dir }}/.ssh"
+    dest: "{{ ansible_user_dir }}/ansible-images.pub"
     content: "{{ ansible-images.public_key | trim }}"
