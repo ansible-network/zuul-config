@@ -12,6 +12,8 @@
   tasks:
     - include_role:
         role: inject-pubkey-on-appliance
+      vars:
+        pubkey: "{{ generate-ssh-keys_pubkey }}"
 
 - hosts: controller
 
