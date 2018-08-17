@@ -1,0 +1,12 @@
+---
+
+- name: Generate temporary SSH keys in /tmp
+  command: ssh-keygen -t rsa -b 2048 -N '' -f /tmp/id_rsa
+
+- name: Store generate-ssh-keys_privkey variable
+  command: cat /tmp/id_rsa
+  register: privkey
+
+- name: Store generate-ssh-keys_pubkey variable
+  command: cat /tmp/id_rsa.pub
+  register: pubkey

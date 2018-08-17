@@ -1,0 +1,6 @@
+---
+
+- junos_config:
+    lines:
+      - set system login user admin class super-user authentication ssh-rsa "{{ pubkey }}"
+      - set system login user ansible class operator authentication ssh-rsa "{{ pubkey }}"

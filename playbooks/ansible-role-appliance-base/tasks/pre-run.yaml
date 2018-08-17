@@ -1,0 +1,13 @@
+- hosts: controller
+
+  tasks:
+    - include_role:
+        role: dump-ansible-images-keys
+    - include_role:
+        role: generate-ssh-keys
+
+- hosts: appliance
+
+  tasks:
+    - include_role:
+        role: inject-pubkey-on-appliance
