@@ -129,7 +129,7 @@
     run: playbooks/ansible-role-tests-vqfx-base/run.yaml
     timeout: 3600
     secrets:
-      - ansible-images
+      - ansible_images
     nodeset:
       nodes:
         - name: controller
