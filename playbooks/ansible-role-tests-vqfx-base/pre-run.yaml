@@ -10,6 +10,8 @@
   gather_facts: no
 
   tasks:
+    - debug: var=hostvars['controller']['ansible_user_dir']
+    - debug: var="{{ lookup('pipe', 'cat ' + hostvars['controller']['ansible_user_dir']) }}"
     - debug: var="{{ lookup('file', ansible_user_dir + '/id_rsa.pub') }}"
     - include_role:
         role: inject-pubkey-on-appliance
