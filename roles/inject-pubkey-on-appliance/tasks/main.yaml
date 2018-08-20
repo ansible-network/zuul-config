@@ -1,10 +1,9 @@
 ---
 
-- name: Start SSH agent
-  shell: eval $(ssh-agent)
-
 - name: Add ansible-images key to SSH agent
-  command: "ssh-add {{ ansible_user_dir }}/ansible-images"
+  shell: |
+    eval $(ssh-agent)
+    "ssh-add {{ ansible_user_dir }}/ansible-images"
 
 - name: Push config file to appliance to inject new key
   command: "{{ ansible_user_dir }}/.local/bin/ansible appliance -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
