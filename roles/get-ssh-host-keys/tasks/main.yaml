@@ -1,2 +1,2 @@
 ---
-- command: "ssh-keyscan {{ host }}"
+- shell: "ssh-keyscan {{ host }} >> {{ ansible_user_dir }}/.ssh"
