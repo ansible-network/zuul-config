@@ -10,11 +10,10 @@
   gather_facts: no
 
   tasks:
-    - name: Store generate-ssh-keys_pubkey variable
-        command: cat /tmp/id_rsa.pub
-      register: generate_ssh_keys_pubkey
     - include_role:
         role: inject-pubkey-on-appliance
+      vars:
+        pubkey: "{{ lookup('file', ansible_user_dir + '/id_rsa.pub' }}"
 
 - hosts: controller
 
