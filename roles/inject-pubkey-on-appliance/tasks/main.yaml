@@ -1,8 +1,9 @@
 ---
 
 - name: Generate push config playbook
-  src: "{{ network_os }}/push_config.j2"
-  dest: "{{ ansible_user_dir }}/push_config.yaml"
+  template:
+    src: "{{ network_os }}/push_config.j2"
+    dest: "{{ ansible_user_dir }}/push_config.yaml"
 
 - command: "cat {{ ansible_user_dir }}/push_config.yaml"
 
