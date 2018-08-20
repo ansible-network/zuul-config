@@ -4,6 +4,8 @@
     - include_role:
         role: ensure-ansible
     - include_role:
+        role: ensure-ansible-network-libs
+    - include_role:
         role: get-ssh-host-keys
       vars:
         host: "{{ hostvars['appliance']['ansible_host'] }}"
