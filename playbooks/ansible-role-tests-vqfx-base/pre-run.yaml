@@ -13,7 +13,8 @@
     - include_role:
         role: inject-pubkey-on-appliance
       vars:
-        pubkey: "{{ lookup('file', ansible_user_dir + '/id_rsa.pub' }}"
+        pubkey: "{{ lookup('file', ansible_user_dir + '/id_rsa.pub') }}"
+        ansible_ssh_private_key_file: "{{ ansible_user_dir }}/ansible-images"
 
 - hosts: controller
 
