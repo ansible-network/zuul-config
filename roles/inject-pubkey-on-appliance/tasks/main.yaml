@@ -1,5 +1,8 @@
 ---
 
+- name: Start SSH agent
+  shell: eval $(ssh-agent)
+
 - name: Add ansible-images key to SSH agent
   command: "ssh-add {{ ansible_user_dir }}/ansible-images"
 
