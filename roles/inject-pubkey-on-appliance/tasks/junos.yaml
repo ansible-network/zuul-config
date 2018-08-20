@@ -1,7 +1,0 @@
----
-
-- template:
-    src: "junos/config"
-    dest: junos_config
-
-- command: ansible-playbook -i inventory -m junos_config -a src=junos_config

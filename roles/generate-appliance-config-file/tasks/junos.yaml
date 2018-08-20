@@ -1,0 +1,5 @@
+---
+
+- template:
+    src: "{{ network_os }}/config.j2"
+    dest: "{{ ansible_user_dir }}/appliance_config"

@@ -14,8 +14,10 @@
     - command: "cat {{ ansible_user_dir }}/inventory/hosts"
     - command: "cat {{ ansible_user_dir }}/inventory/hostvars/appliance"
     - include_role:
-        role: inject-pubkey-on-appliance
+        role: generate-appliance-config-file
       vars:
+        network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
         pubkey: generate_ssh_keys_pubkey
+    - command: cat "{{ ansible_user_dir }}/appliance_config"
     - include_role:
         role: remove-ansible-images-keys

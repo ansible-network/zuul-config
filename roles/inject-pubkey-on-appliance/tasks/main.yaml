@@ -1,3 +1,0 @@
----
-
-- include_tasks: "{{ hostvars['appliance'['ansible_network_os'] }}.yaml"
