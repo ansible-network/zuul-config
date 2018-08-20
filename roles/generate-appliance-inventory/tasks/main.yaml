@@ -7,7 +7,7 @@
 
 - name: Create hostvars folder
   file:
-    path: "{{ ansible_user_dir }}/hostvars"
+    path: "{{ ansible_user_dir }}/inventory/hostvars"
     state: directory
 
 - name: Create inventory file
@@ -15,7 +15,7 @@
     content: appliance
     dest: "{{ ansible_user_dir }}/inventory/hosts"
 
-- name: Create appliance hostsvars file
+- name: Create appliance hostvars file
   template:
     src: inventory.j2
     dest: "{{ ansible_user_dir }}/inventory/hostvars/appliance"
