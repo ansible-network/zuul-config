@@ -7,7 +7,12 @@
         role: generate-ssh-keys
     - include_role:
         role: generate-appliance-inventory
-    - command: "cat {{ ansible_user_dir }}/inventory"
+      vars:
+        host: "{{ hostvars['appliance']['ansible_host'] }}"
+        user: "{{ hostvars['appliance']['ansible_user'] }}"
+        network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
+    - command: "cat {{ ansible_user_dir }}/inventory/hosts"
+    - command: "cat {{ ansible_user_dir }}/inventory/hostvars/appliance"
     - include_role:
         role: inject-pubkey-on-appliance
       vars:
