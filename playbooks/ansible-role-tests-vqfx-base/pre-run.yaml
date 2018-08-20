@@ -11,6 +11,7 @@
         host: "{{ hostvars['appliance']['ansible_host'] }}"
         user: "{{ hostvars['appliance']['ansible_user'] }}"
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
+        private_key_file: "{{ ansible_user_dir }}/id_rsa"
     - command: "cat {{ ansible_user_dir }}/inventory/hosts"
     - command: "cat {{ ansible_user_dir }}/inventory/hostvars/appliance"
     - include_role:
@@ -19,5 +20,9 @@
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
         pubkey: generate_ssh_keys_pubkey
     - command: cat "{{ ansible_user_dir }}/appliance_config"
+    - include_role:
+        role: inject-pubkey-on-appliance 
+      vars:
+        network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
     - include_role:
         role: remove-ansible-images-keys

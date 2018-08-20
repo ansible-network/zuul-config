@@ -1,0 +1,5 @@
+---
+
+- command: "{{ ansible_user_dir }}/.local/bin/ansible -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
+  args:
+    chdir: "{{ ansible_user_dir }}"
