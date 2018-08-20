@@ -1,5 +1,5 @@
 ---
 
-- command: "{{ ansible_user_dir }}/.local/bin/ansible appliance -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
+- command: "{{ ansible_user_dir }}/.local/bin/ansible appliance --private-key ansible-images inventory -m {{ network_os }}_config -a 'src=appliance_config'"
   args:
     chdir: "{{ ansible_user_dir }}"
