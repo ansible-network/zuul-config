@@ -5,8 +5,8 @@
 
 - name: Store generate-ssh-keys_privkey variable
   command: cat /tmp/id_rsa
-  register: privkey
+  register: generate_ssh_keys_privkey
 
 - name: Store generate-ssh-keys_pubkey variable
   command: cat /tmp/id_rsa.pub
-  register: pubkey
+  register: generate_ssh_keys_pubkey
