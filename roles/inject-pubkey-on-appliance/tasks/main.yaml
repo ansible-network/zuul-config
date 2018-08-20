@@ -8,6 +8,6 @@
 - command: "cat {{ ansible_user_dir }}/push_config.yaml"
 
 - name: Run push config playbook to inject new key
-  command: "{{ ansible_user_dir }}/.local/bin/ansible-playbook -i inventory push_config.yaml"
+  command: "{{ ansible_user_dir }}/.local/bin/ansible-playbook -vvvv -i inventory push_config.yaml"
   args:
     chdir: "{{ ansible_user_dir }}"
