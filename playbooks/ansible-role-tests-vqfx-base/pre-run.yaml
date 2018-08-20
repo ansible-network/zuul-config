@@ -10,10 +10,11 @@
   gather_facts: no
 
   tasks:
+    - name: Store generate-ssh-keys_pubkey variable
+        command: cat /tmp/id_rsa.pub
+      register: generate_ssh_keys_pubkey
     - include_role:
         role: inject-pubkey-on-appliance
-      vars:
-        pubkey: "{{ generate_ssh_keys_pubkey }}"
 
 - hosts: controller
 
