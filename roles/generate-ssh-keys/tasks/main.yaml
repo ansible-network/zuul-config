@@ -1,7 +1,7 @@
 ---
 
 - name: Generate temporary SSH keys
-  command: "ssh-keygen -t rsa -b 2048 -N ''"
+  command: "ssh-keygen -t rsa -b 2048 -N '' -f {{ ansible_user_dir }}/.ssh/id_rsa"
 
 - name: Store public key variable
   command: "cat {{ ansible_user_dir }}/.ssh/id_rsa.pub"
