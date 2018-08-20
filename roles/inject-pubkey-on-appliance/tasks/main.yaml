@@ -1,20 +1,12 @@
 ---
 
-- name: debug
-  command: "ls {{ ansible_user_dir }}"
-- name: debug
-  command: "touch {{ ansible_user_dir }}/ansible-images"
-- name: debug ssh-add
-  command: which ssh-add
-- name: /usr/bin/ssh-add
-  command: /usr/bin/ssh-add
+- name: Generate push config playbook
+  src: "{{ network_os }}/push_config.j2"
+  dest: "{{ ansible_user_dir }}/push_config.yaml"
 
-- name: Add ansible-images key to SSH agent
-  shell: |
-    eval $(ssh-agent)
-    "/usr/bin/ssh-add {{ ansible_user_dir }}/ansible-images"
+- command: "cat {{ ansible_user_dir }}/push_config.yaml"
 
-- name: Push config file to appliance to inject new key
-  command: "{{ ansible_user_dir }}/.local/bin/ansible appliance -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
+- name: Run push config playbook to inject new key
+  command: "{{ ansible_user_dir }}/.local/bin/ansible-playbook -i inventory push_config.yaml"
   args:
     chdir: "{{ ansible_user_dir }}"

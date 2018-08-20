@@ -1,0 +1,6 @@
+- hosts: appliance
+  connection: network_cli
+
+  tasks:
+    - junos_config:
+        src: appliance_config
