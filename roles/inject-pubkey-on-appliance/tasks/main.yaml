@@ -1,5 +1,9 @@
 ---
 
-- command: "{{ ansible_user_dir }}/.local/bin/ansible appliance --private-key ansible-images -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
+- name: Add ansible-images key to SSH agent
+  command: "ssh-add {{ ansible_user_dir }}/ansible-images"
+
+- name: Push config file to appliance to inject new key
+  command: "{{ ansible_user_dir }}/.local/bin/ansible appliance -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
   args:
     chdir: "{{ ansible_user_dir }}"
