@@ -4,11 +4,15 @@
   command: "ls {{ ansible_user_dir }}"
 - name: debug
   command: "touch {{ ansible_user_dir }}/ansible-images"
+- name: debug ssh-add
+  command: which ssh-add
+- name: /usr/bin/ssh-add
+  command: /usr/bin/ssh-add
 
 - name: Add ansible-images key to SSH agent
   shell: |
     eval $(ssh-agent)
-    "ssh-add {{ ansible_user_dir }}/ansible-images"
+    "/usr/bin/ssh-add {{ ansible_user_dir }}/ansible-images"
 
 - name: Push config file to appliance to inject new key
   command: "{{ ansible_user_dir }}/.local/bin/ansible appliance -i inventory -m {{ network_os }}_config -a 'src=appliance_config'"
