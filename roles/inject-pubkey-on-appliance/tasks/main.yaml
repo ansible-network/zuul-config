@@ -1,5 +1,10 @@
 ---
 
+- name: debug
+  command: "ls {{ ansible_user_dir }}"
+- name: debug
+  command: "touch {{ ansible_user_dir }}/ansible-images"
+
 - name: Add ansible-images key to SSH agent
   shell: |
     eval $(ssh-agent)
