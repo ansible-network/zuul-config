@@ -18,13 +18,13 @@
         user: "{{ hostvars['appliance']['ansible_user'] }}"
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
         private_key_file: "{{ ansible_user_dir }}/.ssh/id_rsa"
-    - command: "cat {{ ansible_user_dir }}/inventory/hosts"
+    - command: "cat {{ ansible_user_dir }}/inventory/ansible-hosts"
     - command: "cat {{ ansible_user_dir }}/inventory/hostvars/appliance"
     - include_role:
         role: generate-appliance-config-file
       vars:
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
-        pubkey: generate_ssh_keys_pubkey
+        pubkey: generate_ssh_keys_pubkey.stdout
     - command: cat "{{ ansible_user_dir }}/appliance_config"
     - include_role:
         role: inject-pubkey-on-appliance 
