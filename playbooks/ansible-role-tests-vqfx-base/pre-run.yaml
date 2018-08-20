@@ -2,6 +2,8 @@
 
   tasks:
     - include_role:
+        role: ensure-ansible
+    - include_role:
         role: dump-ansible-images-keys
     - include_role:
         role: generate-ssh-keys
