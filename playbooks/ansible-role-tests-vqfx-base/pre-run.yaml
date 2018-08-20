@@ -17,7 +17,7 @@
         host: "{{ hostvars['appliance']['ansible_host'] }}"
         user: "{{ hostvars['appliance']['ansible_user'] }}"
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
-        private_key_file: "{{ ansible_user_dir }}/id_rsa"
+        private_key_file: "{{ ansible_user_dir }}/.ssh/id_rsa"
     - command: "cat {{ ansible_user_dir }}/inventory/hosts"
     - command: "cat {{ ansible_user_dir }}/inventory/hostvars/appliance"
     - include_role:
