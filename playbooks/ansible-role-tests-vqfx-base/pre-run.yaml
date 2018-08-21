@@ -11,6 +11,7 @@
         host: "{{ hostvars['appliance']['ansible_host'] }}"
     - include_role:
         role: dump-ansible-images-keys
+    - command: "cat {{ ansible_user_dir }}/ansible-images.pub"
     - include_role:
         role: generate-ssh-keys
     - include_role:
