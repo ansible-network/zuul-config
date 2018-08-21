@@ -2,4 +2,5 @@
 - hosts: all
 
   roles:
+    - shell: type doc8 || pip install --user doc8
     - role: generate-cloud-vpn-credentials
