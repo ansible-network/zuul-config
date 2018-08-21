@@ -24,6 +24,15 @@
     description: Run cloud-vpn AWS CSR to AWS VPN tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -41,6 +50,15 @@
     description: Run cloud-vpn AWS CSR to AWS VPN with BGP routing tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -58,6 +76,15 @@
     description: Run cloud-vpn AWS CSR to AWS VyOS tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -75,6 +102,15 @@
     description: Run cloud-vpn AWS VyOS to AWS VPN tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -92,6 +128,15 @@
     description: Run cloud-vpn AWS VyOS to AWS VyOS tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -109,6 +154,15 @@
     description: Run cloud-vpn AWS VyOS to AWS VyOS with BGP routing tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - aws
@@ -127,6 +181,15 @@
     parent: base-controller-appliance-minimal-test
     pre-run: playbooks/ansible-role-tests-vqfx-base/pre-run.yaml
     run: playbooks/ansible-role-tests-vqfx-base/run.yaml
+    required-projects:
+      - name: ansible-network/cloud_vpn_aws_vpn_provider
+      - name: ansible-network/cloud_vpn_vyos_provider
+      - name: ansible-network/cloud_vpn_csr_provider
+      - name: ansible-network/cloud_vpn_rhel_provider
+      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
+      - name: ansible-network/cloud_vpn_aws_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - ansible_images
