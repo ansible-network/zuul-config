@@ -181,15 +181,6 @@
     parent: base-controller-appliance-minimal-test
     pre-run: playbooks/ansible-role-tests-vqfx-base/pre-run.yaml
     run: playbooks/ansible-role-tests-vqfx-base/run.yaml
-    required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
     timeout: 3600
     secrets:
       - ansible_images
