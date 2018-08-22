@@ -1,0 +1,4 @@
+---
+- command: "/home/zuul-worker/.local/bin/ansible-playbook -i {{ test_inventory }} {{ test_entrypoint }} {{ test_options }}"
+  args:
+    chdir: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/tests/"
