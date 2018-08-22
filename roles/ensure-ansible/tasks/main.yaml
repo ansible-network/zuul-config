@@ -4,6 +4,7 @@
   package:
     name: ansible
     state: absent
+  become: yes
 
 - name: Install the required version of Ansible
   pip:
