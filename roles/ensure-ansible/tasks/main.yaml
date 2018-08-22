@@ -1,5 +1,10 @@
 ---
 
+- name: Uninstall system wide Ansible just in case
+  package:
+    name: ansible
+    state: absent
+
 - name: Install the required version of Ansible
   pip:
     name: "{{ ansible_pip_package }}"
