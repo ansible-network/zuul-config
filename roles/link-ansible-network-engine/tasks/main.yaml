@@ -1,8 +1,8 @@
-- command: "ls {{ ansible_user_dir }}/{{ zuul.project.src_dir }}/../
+- command: "ls {{ ansible_user_dir }}/{{ zuul.project.src_dir }}/../"
 
 - name: Link checked out network-engine to ansible-network.network-engine
   command: ln -s network-engine ansible-network.network-engine
   args:
     chdir: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/../"
 
-- command: "ls {{ ansible_user_dir }}/{{ zuul.project.src_dir }}/../
+- command: "ls {{ ansible_user_dir }}/{{ zuul.project.src_dir }}/../"
