@@ -25,6 +25,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
@@ -46,6 +47,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
@@ -67,6 +69,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
@@ -88,6 +91,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
@@ -109,6 +113,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
@@ -130,6 +135,7 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
+      - name: ansible-network/network-engine
       - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
