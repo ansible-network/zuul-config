@@ -1,4 +1,4 @@
 ---
 
-ansible_pip_package: pip
+ansible_pip_package: ansible
 pip: /usr/bin/pip
