@@ -1,4 +1,12 @@
 ---
 
+- command: type ansible-galaxy
+  ignore_errors: yes
+
+- command: ls /home/zuul-worker/.local/bin
+  register: out
+
+- debug: var=out
+
 - name: Install network-engine with Ansible galaxy
   command: /home/zuul-worker/.local/bin/ansible-galaxy install ansible-network.network-engine
