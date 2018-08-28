@@ -1,0 +1,7 @@
+---
+
+- pip:
+    requirements: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/requirements.txt"
+    extra_args: --user
+    state: forcereinstall
+    executable: /usr/bin/pip
