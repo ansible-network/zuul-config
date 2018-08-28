@@ -5,4 +5,4 @@
     - role: generate-cloud-vpn-credentials
     - role: ensure-ansible
     - role: ensure-pip-requirements
-    - role: ensure-network-engine
+    - role: link-ansible-network-engine

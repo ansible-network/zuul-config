@@ -1,0 +1,2 @@
+- name: Link checked out network-engine to ansible-network.network-engine
+  command: ln -s network-engine ansible-network.network-engine
