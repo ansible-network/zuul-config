@@ -1,0 +1,4 @@
+---
+
+ansible_pip_package: pip
+executable: /usr/bin/pip
