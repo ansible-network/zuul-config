@@ -25,14 +25,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
@@ -51,14 +46,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
@@ -77,14 +67,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
@@ -103,14 +88,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
@@ -129,14 +109,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
@@ -155,14 +130,9 @@
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
-      - name: ansible-network/cloud_vpn_aws_vpn_provider
-      - name: ansible-network/cloud_vpn_vyos_provider
-      - name: ansible-network/cloud_vpn_csr_provider
-      - name: ansible-network/cloud_vpn_rhel_provider
-      - name: ansible-network/cloud_vpn_aws_vpn_provisioner
-      - name: ansible-network/cloud_vpn_aws_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
-      - name: ansible-network/cloud_vpn_azure_provisioner
+      - name: ansible-network/aws
+      - name: ansible-network/cisco_ios
+      - name: ansible-network/vyos
     timeout: 3600
     secrets:
       - aws
