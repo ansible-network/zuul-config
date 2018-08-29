@@ -1,4 +1,9 @@
 ---
+# Shared zuul config specific to the Ansible Network Project
+# Contains definitions of trusted jobs
+# Overrides jobs from:
+#    https://github.com/ansible-network/ansible-zuul-jobs
+
 # Changes to this job require a special procedure, because they can
 # not be tested before landing, and if they are faulty, they will
 # break all jobs, meaning subsequent corrections will not be able to
@@ -18,6 +23,76 @@
 #    the commit message, link to (without using Depends-On:) the
 #    change from step 4 so reviewers can see the test results.
 # 6) Once the change in step 5 merges, abandon the change from step 4.
+
+- job:
+    name: base-minimal
+    parent: null
+    description: |
+      The base-minimal job for Ansible's installation of Zuul.
+    pre-run: playbooks/base-minimal/pre.yaml
+    post-run:
+      - playbooks/base-minimal/post.yaml
+    roles:
+      - zuul: sf-jobs
+      - zuul: openstack-infra/zuul-jobs
+    timeout: 1800
+    attempts: 3
+    secrets:
+      - site_ansiblelogs
+    nodeset:
+      nodes:
+        - name: container
+          label: runc-fedora
+
+- job:
+    name: base-minimal-test
+    parent: null
+    description: |
+      A job to test changes to the base-minimal job without disturbing the
+      main job in production.  Not for general use.
+    pre-run: playbooks/base-minimal-test/pre.yaml
+    post-run:
+      - playbooks/base-minimal-test/post.yaml
+    roles:
+      - zuul: sf-jobs
+      - zuul: openstack-infra/zuul-jobs
+    timeout: 1800
+    attempts: 3
+    secrets:
+      - site_ansiblelogs
+    nodeset:
+      nodes:
+        - name: container
+          label: runc-fedora
+
+- job:
+    name: base-controller-appliance-minimal-test
+    parent: null
+    description: |
+      A job to test changes to the base-controller-appliance-minimal job without
+      disturbing the main job in production.  Not for general use.
+    pre-run: playbooks/base-controller-appliance-minimal-test/pre.yaml
+    post-run:
+      - playbooks/base-controller-appliance-minimal-test/post.yaml
+    roles:
+      - zuul: sf-jobs
+      - zuul: openstack-infra/zuul-jobs
+    timeout: 1800
+    attempts: 3
+    secrets:
+      - site_ansiblelogs
+    nodeset:
+      nodes:
+        - name: controller
+          label: dib-fedora-27
+        - name: appliance
+          label: ansible-network-vqfx
+
+# TODO(pabelanger): Move to ansible-network/ansible-zuul-jobs once we are able to shadow jobs in zuul.
+- job:
+    name: base
+    parent: base-minimal
+
 
 - job:
     name: cloud-vpn-aws-csr-to-aws-vpn
