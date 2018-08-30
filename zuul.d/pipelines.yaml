@@ -47,7 +47,7 @@
           - permission: write
             type: approved
         label:
-          - mergeit
+          - gate
         status: "softwarefactory-project-zuul\\[bot\\]:ansible-network/check:success"
         open: True
         current-patchset: True
@@ -62,7 +62,7 @@
         - event: pull_request
           action: labeled
           label:
-            - mergeit
+            - gate
     start:
       github.com:
         status: 'pending'
