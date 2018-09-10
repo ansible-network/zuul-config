@@ -29,7 +29,7 @@
         pubkey: "{{ generate_ssh_keys_pubkey.stdout }}"
     - command: cat "{{ ansible_user_dir }}/appliance_config"
     - include_role:
-        role: inject-pubkey-on-appliance 
+        role: inject-pubkey-on-appliance
       vars:
         network_os: "{{ hostvars['appliance']['ansible_network_os'] }}"
     - include_role:
