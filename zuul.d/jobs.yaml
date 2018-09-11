@@ -64,8 +64,8 @@
       - site_ansiblelogs
     nodeset:
       nodes:
-        - name: container
-          label: runc-fedora
+        - name: centos-7
+          label: ansible-centos-7
 
 - job:
     name: base-controller-appliance-minimal-test
