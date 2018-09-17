@@ -6,10 +6,12 @@
 - project:
     check:
       jobs:
-        - linters
+        - tox-docs
+        - tox-linters
     gate:
       jobs:
-        - linters
+        - tox-docs
+        - tox-linters
 
 - project:
     name: ansible-network/cloud_vpn

@@ -1,0 +1,14 @@
+# Backup files
+*~
+\#*\#
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+# Docs build: Sphinx
+doc/build
+
+# Docs build: pbr generates these
+AUTHORS
+ChangeLog
