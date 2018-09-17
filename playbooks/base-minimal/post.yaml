@@ -13,10 +13,3 @@
       vars:
         zuul_log_url: "{{ site_ansiblelogs.url }}"
         zuul_logserver_root: "{{ site_ansiblelogs.path }}"
-
-- hosts: localhost
-  ignore_errors: yes
-  roles:
-    - role: submit-logstash-jobs
-      logstash_gearman_server: "ansible-network.softwarefactory-project.io"
-      logstash_gearman_server_port: 4731
