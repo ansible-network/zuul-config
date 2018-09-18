@@ -17,7 +17,7 @@
     name: ansible-network/cloud_vpn
     check:
       jobs:
-        - linters
+        - tox-linters
         - cloud-vpn-aws-csr-to-aws-vpn
         - cloud-vpn-aws-csr-to-aws-vpn-bgp
         - cloud-vpn-aws-csr-to-aws-vyos
@@ -26,7 +26,7 @@
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
     gate:
       jobs:
-        - linters
+        - tox-linters
         - cloud-vpn-aws-csr-to-aws-vpn
         - cloud-vpn-aws-csr-to-aws-vpn-bgp
         - cloud-vpn-aws-csr-to-aws-vyos
