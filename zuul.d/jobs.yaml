@@ -41,10 +41,7 @@
     attempts: 3
     secrets:
       - site_ansiblelogs
-    nodeset:
-      nodes:
-        - name: container
-          label: runc-fedora
+    nodeset: centos-7
 
 - job:
     name: base-minimal-test
@@ -61,10 +58,7 @@
     attempts: 3
     secrets:
       - site_ansiblelogs
-    nodeset:
-      nodes:
-        - name: centos-7
-          label: ansible-centos-7
+    nodeset: centos-7
 
 - job:
     name: base-controller-appliance-minimal-test
