@@ -12,9 +12,9 @@
 
 - hosts: all
   tasks:
-    - name: Run prepare-workspace role
+    - name: Run start-zuul-console role
       include_role:
-        name: prepare-workspace
+        name: start-zuul-console
 
     - name: Run validate-host role
       include_role:
