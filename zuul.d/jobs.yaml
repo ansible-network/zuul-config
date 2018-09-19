@@ -37,7 +37,6 @@
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
-    attempts: 3
     secrets:
       - site_ansiblelogs
     nodeset: centos-7
@@ -54,7 +53,6 @@
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
-    attempts: 3
     secrets:
       - site_ansiblelogs
     nodeset: centos-7
@@ -72,7 +70,6 @@
       - zuul: sf-jobs
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
-    attempts: 3
     secrets:
       - site_ansiblelogs
     nodeset:
