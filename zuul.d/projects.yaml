@@ -15,6 +15,7 @@
 
 - project:
     name: ansible-network/cloud_vpn
+    default-branch: devel
     check:
       jobs:
         - tox-linters
