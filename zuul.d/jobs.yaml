@@ -49,12 +49,12 @@
       main job in production.  Not for general use.
     pre-run: playbooks/base-minimal-test/pre.yaml
     post-run:
-      - playbooks/base-minimal-test/post.yaml
+      - playbooks/base-minimal-test/post-swift.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
     secrets:
-      - site_ansiblelogs
+      - vexxhost_clouds_yaml
     nodeset: centos-7
 
 - job:
