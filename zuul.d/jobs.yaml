@@ -49,7 +49,7 @@
       main job in production.  Not for general use.
     pre-run: playbooks/base-minimal-test/pre.yaml
     post-run:
-      - playbooks/base-minimal-test/post-swift.yaml
+      - playbooks/base-minimal-test/post-logs.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
