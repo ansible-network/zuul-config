@@ -15,3 +15,7 @@
     - name: Run start-zuul-console role
       include_role:
         name: start-zuul-console
+
+    - name: Run prepare-workspace role
+      include_role:
+        name: prepare-workspace
