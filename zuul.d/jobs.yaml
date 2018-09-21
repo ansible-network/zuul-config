@@ -55,6 +55,7 @@
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
     secrets:
+      - site_ansiblelogs
       - vexxhost_clouds_yaml
     nodeset: centos-7
 
