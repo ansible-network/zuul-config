@@ -9,11 +9,9 @@
       include_role:
         name: htmlify-logs
 
-    - block:
-      - name: Run upload-logs-swift role
-        include_role:
-          name: upload-logs-swift
-        vars:
-          zuul_log_cloud_config: "{{ vexxhost_clouds_yaml }}"
-          zuul_log_partition: True
-      ignore_errors: True
+    - name: Run upload-logs-swift role
+      include_role:
+        name: upload-logs-swift
+      vars:
+        zuul_log_cloud_config: "{{ vexxhost_clouds_yaml }}"
+        zuul_log_partition: True
