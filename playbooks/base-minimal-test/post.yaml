@@ -3,7 +3,6 @@
   roles:
     - role: add-fileserver
       fileserver: "{{ site_ansiblelogs }}"
-    - emit-ara-html
 
 - hosts: "{{ site_ansiblelogs.fqdn }}"
   tasks:
