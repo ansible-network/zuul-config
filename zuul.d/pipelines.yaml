@@ -43,9 +43,6 @@
     precedence: high
     require:
       github.com:
-        review:
-          - permission: write
-            type: approved
         label:
           - mergeit
         status: "softwarefactory-project-zuul\\[bot\\]:ansible-network/check:success"
@@ -53,9 +50,6 @@
         current-patchset: True
     trigger:
       github.com:
-        - event: pull_request_review
-          action: submitted
-          state: approved
         - event: pull_request
           action: status
           status: "softwarefactory-project-zuul\\[bot\\]:ansible-network/check:success"
