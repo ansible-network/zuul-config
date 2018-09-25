@@ -50,6 +50,7 @@
     pre-run: playbooks/base-minimal-test/pre.yaml
     post-run:
       - playbooks/base-minimal-test/post-logs.yaml
+      - playbooks/base-minimal-test/post-ssh.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
