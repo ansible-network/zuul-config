@@ -40,7 +40,7 @@
     timeout: 1800
     secrets:
       - site_ansiblelogs
-    nodeset: centos-7
+    nodeset: fedora-latest
 
 - job:
     name: base-minimal-test
