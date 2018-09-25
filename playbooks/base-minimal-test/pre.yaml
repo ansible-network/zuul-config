@@ -12,6 +12,10 @@
 
 - hosts: all
   tasks:
+    - name: Run add-build-sshkey role
+      include_role:
+        name: add-build-sshkey
+
     - name: Run start-zuul-console role
       include_role:
         name: start-zuul-console
