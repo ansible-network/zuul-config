@@ -61,7 +61,7 @@
       ara_compress_html: false
     secrets:
       - vexxhost_clouds_yaml
-    nodeset: centos-7
+    nodeset: fedora-latest
 
 - job:
     name: base-controller-appliance-minimal-test
