@@ -81,7 +81,7 @@
     nodeset:
       nodes:
         - name: controller
-          label: dib-fedora-27
+          label: fedora-latest
         - name: appliance
           label: ansible-network-vqfx
 
@@ -101,7 +101,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn.yaml
@@ -123,7 +123,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn_bgp.yaml
@@ -145,7 +145,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vyos.yaml
@@ -167,7 +167,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vpn.yaml
@@ -189,7 +189,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos.yaml
@@ -211,7 +211,7 @@
     nodeset:
       nodes:
         name: controller
-        label: dib-fedora-27
+        label: fedora-latest
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos_bgp.yaml
@@ -229,6 +229,6 @@
     nodeset:
       nodes:
         - name: controller
-          label: dib-fedora-27
+          label: fedora-latest
         - name: appliance
           label: ansible-network-vqfx
