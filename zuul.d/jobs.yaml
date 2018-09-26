@@ -34,12 +34,16 @@
     pre-run: playbooks/base-minimal/pre.yaml
     post-run:
       - playbooks/base-minimal/post-ssh.yaml
-      - playbooks/base-minimal/post.yaml
+      - playbooks/base-minimal/post-logs.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
     timeout: 1800
+    vars:
+      ara_report_type: html
+      ara_report_path: ara-report
+      ara_compress_html: false
     secrets:
-      - site_ansiblelogs
+      - vexxhost_clouds_yaml
     nodeset: fedora-latest
 
 - job:
