@@ -98,10 +98,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn.yaml
@@ -120,10 +117,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vpn_bgp.yaml
@@ -142,10 +136,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-2
     vars:
       test_entrypoint: test_aws_csr_to_aws_vyos.yaml
@@ -164,10 +155,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vpn.yaml
@@ -186,10 +174,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos.yaml
@@ -208,10 +193,7 @@
     timeout: 3600
     secrets:
       - aws
-    nodeset:
-      nodes:
-        name: controller
-        label: ansible-fedora-28
+    nodeset: fedora-latest-1vcpu
     semaphore: cloud-vpn-aws-to-aws-us-east-1
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos_bgp.yaml
