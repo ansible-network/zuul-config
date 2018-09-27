@@ -14,4 +14,3 @@
         name: upload-logs-swift
       vars:
         zuul_log_cloud_config: "{{ vexxhost_clouds_yaml }}"
-        zuul_log_partition: True
