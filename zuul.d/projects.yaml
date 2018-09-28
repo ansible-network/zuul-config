@@ -34,3 +34,8 @@
         - cloud-vpn-aws-vyos-to-aws-vpn
         - cloud-vpn-aws-vyos-to-aws-vyos
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
+
+- project:
+    name: ansible-network/sandbox
+    templates:
+      - noop-jobs
