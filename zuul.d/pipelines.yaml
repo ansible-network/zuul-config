@@ -87,13 +87,17 @@
 
 - pipeline:
     name: post
-    post-review: true
-    description: This pipeline runs jobs that operate after each change is merged.
-    manager: independent
+    description: |
+      This pipeline runs jobs that operate after each change is
+      merged. Queue items are identified by the abbreviated hash (git
+      log --format=%h) of the merge commit.
+    manager: supercedent
     precedence: low
+    post-review: true
     trigger:
       github.com:
         - event: push
+          ref: ^refs/heads/.*$
     success:
       sqlreporter:
     failure:
