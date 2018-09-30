@@ -148,21 +148,6 @@
       sqlreporter:
 
 - pipeline:
-    name: release-post
-    description: This pipeline runs release-process-critical jobs that operate after specific changes are merged.
-    manager: independent
-    precedence: high
-    post-review: true
-    trigger:
-      github.com:
-        - event: push
-          ref: ^refs/heads/.*$
-    success:
-      sqlreporter:
-    failure:
-      sqlreporter:
-
-- pipeline:
     name: third-party-check
     description: |
       Newly uploaded patchsets to projects that are external to OpenStack
