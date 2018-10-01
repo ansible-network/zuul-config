@@ -20,8 +20,6 @@
         status: 'pending'
         status-url: 'https://ansible-network.softwarefactory-project.io/zuul/status.html'
         comment: false
-        unlabel:
-          - gate
     success:
       github.com:
         status: 'success'
@@ -29,6 +27,26 @@
     failure:
       github.com:
         status: 'failure'
+      sqlreporter:
+
+- pipeline:
+    name: unlabel-on-push
+    description: |
+      If a PR is pushed to and has the gate label, we want to remove that.
+    manager: independent
+    trigger:
+      github.com:
+        - event: pull_request
+          action:
+            - changed
+    require:
+      github.com:
+        label:
+          - gate
+    success:
+      github.com:
+        unlabel: gate
+        comment: false
       sqlreporter:
 
 - pipeline:
