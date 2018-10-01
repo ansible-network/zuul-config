@@ -20,6 +20,8 @@
         status: 'pending'
         status-url: 'https://ansible-network.softwarefactory-project.io/zuul/status.html'
         comment: false
+        unlabel:
+          - gate
     success:
       github.com:
         status: 'success'
