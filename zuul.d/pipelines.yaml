@@ -45,7 +45,8 @@
           - gate
     success:
       github.com:
-        unlabel: gate
+        unlabel:
+          - gate
         comment: false
       sqlreporter:
 
