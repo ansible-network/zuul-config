@@ -30,27 +30,6 @@
       sqlreporter:
 
 - pipeline:
-    name: unlabel-on-push
-    description: |
-      If a PR is pushed to and has the gate label, we want to remove that.
-    manager: independent
-    trigger:
-      github.com:
-        - event: pull_request
-          action:
-            - changed
-    require:
-      github.com:
-        label:
-          - gate
-    success:
-      github.com:
-        unlabel:
-          - gate
-        comment: false
-      sqlreporter:
-
-- pipeline:
     name: gate
     description: |
       Changes that have been approved by core developers are enqueued
@@ -96,17 +75,6 @@
     window-increase-factor: 2
 
 - pipeline:
-    name: merge-check
-    description: >
-      Each time a change merges, this pipeline verifies that all open changes
-      on the same project are still mergeable.
-    failure-message: Build failed (merge-check pipeline).
-    manager: independent
-    ignore-dependencies: true
-    precedence: low
-    trigger: {}
-
-- pipeline:
     name: post
     description: |
       This pipeline runs jobs that operate after each change is
@@ -119,20 +87,6 @@
       github.com:
         - event: push
           ref: ^refs/heads/.*$
-    success:
-      sqlreporter:
-    failure:
-      sqlreporter:
-
-- pipeline:
-    name: periodic
-    post-review: true
-    description: Jobs in this queue are triggered daily.
-    manager: independent
-    precedence: low
-    trigger:
-      timer:
-        - time: '0 0 * * *'
     success:
       sqlreporter:
     failure:
@@ -167,3 +121,49 @@
       sqlreporter:
     failure:
       sqlreporter:
+
+- pipeline:
+    name: periodic
+    post-review: true
+    description: Jobs in this queue are triggered daily.
+    manager: independent
+    precedence: low
+    trigger:
+      timer:
+        - time: '0 0 * * *'
+    success:
+      sqlreporter:
+    failure:
+      sqlreporter:
+
+- pipeline:
+    name: unlabel-on-push
+    description: |
+      If a PR is pushed to and has the gate label, we want to remove that.
+    manager: independent
+    trigger:
+      github.com:
+        - event: pull_request
+          action:
+            - changed
+    require:
+      github.com:
+        label:
+          - gate
+    success:
+      github.com:
+        unlabel:
+          - gate
+        comment: false
+      sqlreporter:
+
+- pipeline:
+    name: merge-check
+    description: >
+      Each time a change merges, this pipeline verifies that all open changes
+      on the same project are still mergeable.
+    failure-message: Build failed (merge-check pipeline).
+    manager: independent
+    ignore-dependencies: true
+    precedence: low
+    trigger: {}
