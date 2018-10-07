@@ -74,7 +74,7 @@
     final: true
     run: playbooks/publish/galaxy.yaml
     secrets:
-      - secret: galaxy_qa_secret
+      - secret: galaxy_secret
         name: galaxy_info
 
 # TODO(pabelanger): Refactor everything below, most of this can be placed into untrusted jobs    
