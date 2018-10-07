@@ -68,6 +68,17 @@
     nodeset: fedora-latest
 
 - job:
+    name: release-ansible-role
+    description: |
+      Release ansible roles to galaxy.
+    final: true
+    run: playbooks/publish/galaxy.yaml
+    secrets:
+      - secret: galaxy_qa_secret
+        name: galaxy_info
+
+# TODO(pabelanger): Refactor everything below, most of this can be placed into untrusted jobs    
+- job:
     name: base-controller-appliance-minimal-test
     parent: null
     description: |
