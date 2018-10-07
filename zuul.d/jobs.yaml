@@ -73,6 +73,8 @@
       Release ansible roles to galaxy.
     final: true
     run: playbooks/publish/galaxy.yaml
+    nodeset:
+      nodes: []
     secrets:
       - secret: galaxy_secret
         name: galaxy_info
