@@ -1,13 +1,13 @@
-hosts: localhost
-tasks:
-  # TODO(pabelanger): Move to requirements.txt file?
-  - name: Pip install ansible-galaxy
-    command: pip install ansible --user
+- hosts: localhost
+  tasks:
+    # TODO(pabelanger): Move to requirements.txt file?
+    - name: Pip install ansible-galaxy
+      command: pip install ansible --user
 
-  # TODO(pabelanger): Move into own role.
-  - name: Login into Ansible Galaxy with github token
-    command: "~/.local/bin/ansible-galaxy -s {{ galaxy_info.server }} login --github-token {{ galaxy_info.token }}"
-    no_log: True
+    # TODO(pabelanger): Move into own role.
+    - name: Login into Ansible Galaxy with github token
+      command: "~/.local/bin/ansible-galaxy -s {{ galaxy_info.server }} login --github-token {{ galaxy_info.token }}"
+      no_log: True
 
-  - name: Import role into Ansible Galaxy
-    command: "~/.local/bin/ansible-galaxy -s {{ galaxy_info.server }} import {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
+    - name: Import role into Ansible Galaxy
+      command: "~/.local/bin/ansible-galaxy -s {{ galaxy_info.server }} import {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
