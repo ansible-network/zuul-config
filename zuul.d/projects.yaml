@@ -7,7 +7,7 @@
       - system-required
 
 - project:
-    name: ansible/ansible
+    name: github.com/ansible/ansible
     default-branch: devel
 
 - project:
@@ -21,7 +21,7 @@
         - tox-linters
 
 - project:
-    name: ansible-network/cloud_vpn
+    name: github.com/ansible-network/cloud_vpn
     default-branch: devel
     check:
       jobs:
@@ -43,6 +43,6 @@
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
 
 - project:
-    name: ansible-network/sandbox
+    name: github.com/ansible-network/sandbox
     templates:
       - ansible-role-release-jobs
