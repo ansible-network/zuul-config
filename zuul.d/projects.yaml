@@ -45,4 +45,4 @@
 - project:
     name: ansible-network/sandbox
     templates:
-      - noop-jobs
+      - ansible-role-release-jobs
