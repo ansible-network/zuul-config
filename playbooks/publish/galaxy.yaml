@@ -15,4 +15,4 @@
       no_log: True
 
     - name: Import role into Ansible Galaxy
-      command: "{{ ansible_galaxy_executable }} -s {{ galaxy_info.server }} import --branch {{ zuul.branch }} {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
+      command: "{{ ansible_galaxy_executable }} -s {{ galaxy_info.server }} import --branch {{ zuul.tag }} {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
