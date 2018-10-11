@@ -11,11 +11,6 @@
     default-branch: devel
 
 - project:
-    templates:
-      - ansible-python-jobs
-      - build-tox-docs
-
-- project:
     name: github.com/ansible-network/cloud_vpn
     default-branch: devel
     templates:
@@ -37,7 +32,6 @@
         - cloud-vpn-aws-vyos-to-aws-vyos
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
 
-
 - project:
     name: github.com/ansible-network/network-engine
     default-branch: devel
@@ -48,3 +42,9 @@
     name: github.com/ansible-network/sandbox
     templates:
       - ansible-role-release-jobs
+
+- project:
+    name: github.com/ansible-network/zuul-config
+    templates:
+      - ansible-python-jobs
+      - build-tox-docs
