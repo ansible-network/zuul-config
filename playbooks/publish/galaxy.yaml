@@ -9,9 +9,9 @@
       set_fact:
         ansible_galaxy_executable: "{{ register_ansible_galaxy.stdout }}"
 
-    - name: Run ansible-galaxy-import role
+    - name: Run ansible-galaxy-import-fork role
       include_role:
-        name: ansible-galaxy-import
+        name: ansible-galaxy-import-fork
       vars:
         ansible_galaxy_executable: "{{ ansible_galaxy_executable }}"
         ansible_galaxy_info: "{{ galaxy_secret }}"

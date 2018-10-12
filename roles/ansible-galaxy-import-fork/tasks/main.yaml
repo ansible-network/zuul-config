@@ -1,0 +1,18 @@
+- name: ansible_galaxy_exectable
+  debug:
+    var: "{{ ansible_galaxy_executable }}"
+
+- name: ansible_galaxy_info.server
+  debug:
+    var: "{{ ansible_galaxy_info.server }}"
+
+- name: ansible_galaxy_server
+  debug:
+    var: "{{ ansible_galaxy_server }}"
+
+- name: Login into Ansible Galaxy
+  command: "{{ ansible_galaxy_executable }} -s {{ ansible_galaxy_server }} login --github-token {{ ansible_galaxy_info.token }}"
+  no_log: True
+
+- name: Import role into Ansible Galaxy
+  command: "{{ ansible_galaxy_executable }} -s {{ ansible_galaxy_server }} import --branch {{ ansible_galaxy_branch }} {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
