@@ -9,10 +9,6 @@
       set_fact:
         ansible_galaxy_executable: "{{ register_ansible_galaxy.stdout }}"
 
-    # TODO(pabelanger): Move into own role.
-    - name: Login into Ansible Galaxy with github token
-      command: "{{ ansible_galaxy_executable }} -s {{ galaxy_info.server }} login --github-token {{ galaxy_info.token }}"
-      no_log: True
-
-    - name: Import role into Ansible Galaxy
-      command: "{{ ansible_galaxy_executable }} -s {{ galaxy_info.server }} import --branch {{ zuul.tag }} {{ zuul.project['name'].split('/')[0] }} {{ zuul.project['short_name'] }}"
+    - name: Run ansible-galaxy-import role
+      include_role:
+        name: ansible-galaxy-import
