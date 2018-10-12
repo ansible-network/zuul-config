@@ -77,7 +77,7 @@
       nodes: []
     secrets:
       - secret: galaxy_secret
-        name: galaxy_info
+        name: ansible_galaxy_info
 
 # TODO(pabelanger): Refactor everything below, most of this can be placed into untrusted jobs    
 - job:
