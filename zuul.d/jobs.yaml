@@ -98,7 +98,7 @@
     nodeset:
       nodes:
         - name: controller
-          label: ansible-fedora-28
+          label: ansible-fedora-28-4vcpu
         - name: appliance
           label: ansible-network-vqfx
 
@@ -228,6 +228,6 @@
     nodeset:
       nodes:
         - name: controller
-          label: ansible-fedora-28
+          label: ansible-fedora-28-4vcpu
         - name: appliance
           label: ansible-network-vqfx
