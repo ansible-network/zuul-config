@@ -105,6 +105,11 @@
     success:
       sqlreporter:
     failure:
+      smtp:
+        # TODO(pabelanger): Setup properly email addresses.
+        from: zuul@ansible.org
+        to: pabelanger@gmail.com
+        subject: 'Release of {change.project} failed'
       sqlreporter:
 
 - pipeline:
@@ -120,6 +125,11 @@
     success:
       sqlreporter:
     failure:
+      smtp:
+        # TODO(pabelanger): Setup properly email addresses.
+        from: zuul@ansible.org
+        to: pabelanger@gmail.com
+        subject: 'Pre-release of {change.project} failed'
       sqlreporter:
 
 - pipeline:
