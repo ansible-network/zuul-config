@@ -7,6 +7,12 @@
       - system-required
 
 - project:
+    name: github.com/ansible-network/arista_eos
+    default-branch: devel
+    templates:
+      - ansible-python-jobs
+
+- project:
     name: github.com/ansible-network/cisco_ios
     default-branch: devel
     templates:
