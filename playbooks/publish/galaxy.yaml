@@ -12,3 +12,5 @@
     - name: Run ansible-galaxy-import role
       include_role:
         name: ansible-galaxy-import
+      vars:
+        ansible_galaxy_executable: "{{ ansible_galaxy_executable }}"
