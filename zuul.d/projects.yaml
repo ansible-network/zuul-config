@@ -7,10 +7,6 @@
       - system-required
 
 - project:
-    name: github.com/ansible/ansible
-    default-branch: devel
-
-- project:
     name: github.com/ansible-network/cloud_vpn
     default-branch: devel
     templates:
@@ -54,3 +50,7 @@
     templates:
       - ansible-python-jobs
       - build-tox-docs
+
+- project:
+    name: github.com/ansible/ansible
+    default-branch: devel
