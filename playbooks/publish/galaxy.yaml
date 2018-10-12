@@ -13,5 +13,4 @@
       include_role:
         name: ansible-galaxy-import-fork
       vars:
-        ansible_galaxy_executable: "{{ ansible_galaxy_executable }}"
         ansible_galaxy_info: "{{ galaxy_secret }}"
