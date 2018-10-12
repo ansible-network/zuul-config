@@ -65,7 +65,7 @@
       ara_compress_html: false
     secrets:
       - vexxhost_clouds_yaml
-    nodeset: fedora-latest
+    nodeset: fedora-latest-1vcpu
 
 - job:
     name: release-ansible-role
