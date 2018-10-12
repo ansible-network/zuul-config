@@ -109,7 +109,7 @@
         # TODO(pabelanger): Setup properly email addresses.
         from: zuul@ansible.org
         to: pabelanger@gmail.com
-        subject: 'Release of {change.project} failed'
+        subject: 'Pre-release of {change.project} failed'
       sqlreporter:
 
 - pipeline:
@@ -129,7 +129,7 @@
         # TODO(pabelanger): Setup properly email addresses.
         from: zuul@ansible.org
         to: pabelanger@gmail.com
-        subject: 'Pre-release of {change.project} failed'
+        subject: 'Release of {change.project} failed'
       sqlreporter:
 
 - pipeline:
