@@ -1,9 +1,9 @@
 # NOTE(pabelanger): We setup a fact here because the login task below is setup
 # to use no_log. This gives the user some help debug info when troubleshooting
 # the login command.
-- name: Set _ansible_galaxy_command
+- name: Set fact for ansible-galaxy command
   set_fact:
-    _ansible_galaxy_command: "{{ ansible_galaxy_executable }} -s {{ ansible_galaxy_server }} "
+    _ansible_galaxy_command: "{{ ansible_galaxy_executable }} -s {{ ansible_galaxy_server }}"
 
 - name: Login into Ansible Galaxy
   command: "{{ _ansible_galaxy_command }} login --github-token {{ ansible_galaxy_info.token }}"
