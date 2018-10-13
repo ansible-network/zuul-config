@@ -4,4 +4,4 @@
       include_role:
         name: validate-dco-license
       vars:
-        zuul_work_dir: "{{ zuul.executor.src_root }}/{{ zuul.project.src_dir }}"
+        zuul_work_dir: "{{ zuul.executor.work_root }}/{{ zuul.project.src_dir }}"
