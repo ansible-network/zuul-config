@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - name: Run validate-dco-license role
+      include_role:
+        name: validate-dco-license
