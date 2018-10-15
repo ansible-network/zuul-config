@@ -63,6 +63,14 @@
     default-branch: devel
     templates:
       - ansible-python-jobs
+    check:
+      jobs:
+        - tox-py27
+        - tox-py36
+    gate:
+      jobs:
+        - tox-py27
+        - tox-py36
 
 - project:
     name: github.com/ansible-network/sandbox
