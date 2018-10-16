@@ -75,7 +75,7 @@
 - project:
     name: github.com/ansible-network/sandbox
     templates:
-      - ansible-role-release-jobs
+      - ansible-role-tag-jobs
 
 - project:
     name: github.com/ansible-network/vyos
