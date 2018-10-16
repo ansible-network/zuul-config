@@ -93,6 +93,26 @@
       sqlreporter:
 
 - pipeline:
+    name: tag
+    description: This pipeline runs jobs in response to any tag event.
+    manager: independent
+    precedence: high
+    post-review: True
+    trigger:
+      github.com:
+        - event: push
+          ref: ^refs/tags/.*$
+    success:
+      sqlreporter:
+    failure:
+      smtp:
+        # TODO(pabelanger): Setup properly email addresses.
+        from: zuul@ansible.org
+        to: pabelanger@gmail.com
+        subject: 'Tag of {change.project} failed'
+      sqlreporter:
+
+- pipeline:
     name: pre-release
     description: When a commit is tagged with a pre-release tag, this pipeline runs jobs that publish archives and documentation.
     manager: independent
