@@ -79,6 +79,11 @@
         - ansible-network-tox-py36
 
 - project:
+    name: github.com/ansible-network/releases
+    templates:
+      - noop-jobs
+
+- project:
     name: github.com/ansible-network/sandbox
     templates:
       - ansible-role-tag-jobs
