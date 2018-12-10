@@ -88,6 +88,17 @@
     secrets:
       - galaxy_secret
 
+- job:
+    name: release-ansible-annoucement
+    description: |
+      Send release announcements to twitter.
+    final: true
+    run: playbooks/release/run.yaml
+    required-projects:
+      - ansible-network/releases
+    secrets:
+      - twitter_ansible_network
+
 # TODO(pabelanger): Refactor everything below, most of this can be placed into untrusted jobs    
 - job:
     name: base-controller-appliance-minimal-test
