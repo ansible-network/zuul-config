@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+    - name: Setup tweetrc credentials
+      copy:
+        content: "{{ twitter_ansible_network.credentials }}"
+        dest: ~/.tweetrc
+
+    - name: Bootstrap tox environment
+      args:
+        chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
+      command: tox -evenv --notest
+
+    - name: Send twitter announcement
+      args:
+        chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
+        executable: /bin/bash
+      shell: |
+        source .tox/venv/bin/activate
+        ./tools/twitter-annoucement.py {{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.short_name }}
