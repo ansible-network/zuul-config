@@ -11,9 +11,9 @@
     - name: Bootstrap tox environment
       args:
         chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
-      command: "{{ ansible_user_dir }}/.local/bin/tox -evenv --notest"
+      shell: ~/.local/bin/tox -evenv --notest
 
     - name: Send twitter announcement
       args:
         chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
-      shell: "{{ ansible_user_dir }}/.tox/venv/bin/python tools/twitter-annoucement.py {{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.short_name }}"
+      shell: ".tox/venv/bin/python tools/twitter-annoucement.py {{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.short_name }}"
