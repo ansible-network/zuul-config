@@ -16,4 +16,4 @@
     - name: Send twitter announcement
       args:
         chdir: "{{ zuul.executor.work_root }}/{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
-      shell: ".tox/venv/bin/python tools/twitter-announcement.py '{{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.short_name }}'"
+      shell: ".tox/venv/bin/python tools/twitter-announcement.py '{{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.name }}'"
