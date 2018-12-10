@@ -1,19 +1,19 @@
 - hosts: localhost
   tasks:
-    - name: Setup tweetrc credentials
-      copy:
-        content: "{{ twitter_ansible_network.credentials }}"
-        dest: ~/.tweetrc
-
     - name: Ensure tox is installed
       shell: pip install --user tox
 
     - name: Bootstrap tox environment
       args:
-        chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
+        chdir: "{{ zuul.executor.work_root }}/{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
       shell: ~/.local/bin/tox -evenv --notest
+
+    - name: Setup tweetrc credentials
+      copy:
+        content: "{{ twitter_ansible_network.credentials }}"
+        dest: ~/.tweetrc
 
     - name: Send twitter announcement
       args:
-        chdir: "{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
+        chdir: "{{ zuul.executor.work_root }}/{{ zuul.projects['github.com/ansible-network/releases'].src_dir }}"
       shell: ".tox/venv/bin/python tools/twitter-annoucement.py {{ zuul.project.short_name }} {{ zuul.tag }} https://galaxy.ansible.com/{{ zuul.project.short_name }}"
