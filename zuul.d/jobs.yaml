@@ -96,6 +96,8 @@
     run: playbooks/release/run.yaml
     required-projects:
       - ansible-network/releases
+    nodeset:
+      nodes: []
     secrets:
       - twitter_ansible_network
 
