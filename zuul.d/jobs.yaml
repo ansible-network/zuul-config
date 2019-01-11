@@ -68,16 +68,6 @@
     nodeset: fedora-latest-1vcpu
 
 - job:
-    name: dco-license
-    description: |
-      A job to validate all commits for a PR have been signed using --signoff.
-    run: playbooks/dco-license/run.yaml
-    roles:
-      - zuul: github.com/ansible-network/ansible-zuul-jobs
-    nodeset:
-      nodes: []
-
-- job:
     name: release-ansible-role
     description: |
       Release ansible roles to galaxy.
