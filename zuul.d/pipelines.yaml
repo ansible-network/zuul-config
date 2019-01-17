@@ -168,6 +168,20 @@
       sqlreporter:
 
 - pipeline:
+    name: periodic-1hr
+    post-review: true
+    description: Jobs in this queue are triggered hourly.
+    manager: independent
+    precedence: low
+    trigger:
+      timer:
+        - time: '0 * * * *'
+    success:
+      sqlreporter:
+    failure:
+      sqlreporter:
+
+- pipeline:
     name: unlabel-on-push
     description: |
       If a PR is pushed to and has the gate label, we want to remove that.
