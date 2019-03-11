@@ -37,6 +37,7 @@
       - playbooks/base-minimal/post-logs.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
+    post-timeout: 1800
     timeout: 1800
     vars:
       ara_report_type: html
@@ -58,6 +59,7 @@
       - playbooks/base-minimal-test/post-logs.yaml
     roles:
       - zuul: openstack-infra/zuul-jobs
+    post-timeout: 1800
     timeout: 1800
     vars:
       ara_report_type: html
@@ -104,6 +106,7 @@
     roles:
       - zuul: sf-jobs
       - zuul: openstack-infra/zuul-jobs
+    post-timeout: 1800
     timeout: 1800
     secrets:
       - site_ansiblelogs
