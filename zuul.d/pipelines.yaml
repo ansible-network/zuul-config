@@ -76,6 +76,35 @@
     window-increase-factor: 2
 
 - pipeline:
+    name: promote
+    description: |
+      This pipeline runs jobs that operate after each change is merged
+      in order to promote artifacts generated in the gate
+      pipeline.
+    success-message: Build succeeded (promote pipeline).
+    failure-message: |
+      Build failed (promote pipeline).  For information on how to proceed, see
+      http://docs.openstack.org/infra/manual/developers.html#automated-testing
+    manager: supercedent
+    precedence: high
+    post-review: true
+    trigger:
+      github.com:
+        - event: pull_request
+          action: closed
+    require:
+      github.com:
+        merged: true
+    success:
+      github.com:
+        status: success
+      sqlreporter:
+    failure:
+      github.com:
+        status: failure
+      sqlreporter:
+
+- pipeline:
     name: post
     description: |
       This pipeline runs jobs that operate after each change is
