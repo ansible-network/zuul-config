@@ -43,13 +43,6 @@
       - ansible-role-tag-jobs
 
 - project:
-    name: github.com/ansible-network/cisco_nxos
-    default-branch: devel
-    templates:
-      - ansible-python-jobs
-      - ansible-role-tag-jobs
-
-- project:
     name: github.com/ansible-network/cloud_vpn
     default-branch: devel
     templates:
