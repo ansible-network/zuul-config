@@ -116,11 +116,6 @@
       - noop-jobs
 
 - project:
-    name: github.com/ansible-network/sandbox
-    templates:
-      - ansible-role-tag-jobs
-
-- project:
     name: github.com/ansible-network/vyos
     templates:
       - ansible-python-jobs
