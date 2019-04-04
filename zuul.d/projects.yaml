@@ -146,7 +146,3 @@
 - project:
     name: github.com/ansible/ansible
     default-branch: devel
-
-- project:
-    name: github.com/ansible/mazer
-    default-branch: devel
