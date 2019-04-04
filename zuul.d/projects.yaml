@@ -72,10 +72,6 @@
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
 
 - project:
-    name: github.com/ansible-network/juniper_junos
-    default-branch: devel
-
-- project:
     name: github.com/ansible-network/network-engine
     default-branch: devel
     templates:
