@@ -106,11 +106,6 @@
         - ansible-network-tox-py37
 
 - project:
-    name: github.com/ansible-network/packet-ci-cloud
-    templates:
-      - noop-jobs
-
-- project:
     name: github.com/ansible-network/releases
     templates:
       - noop-jobs
