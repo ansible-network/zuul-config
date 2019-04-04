@@ -74,19 +74,6 @@
 - project:
     name: github.com/ansible-network/juniper_junos
     default-branch: devel
-    templates:
-      - ansible-python-jobs
-      - ansible-role-tag-jobs
-    check:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
-    gate:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
 
 - project:
     name: github.com/ansible-network/network-engine
