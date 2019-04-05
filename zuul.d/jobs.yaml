@@ -86,8 +86,6 @@
       Send release announcements to twitter.
     final: true
     run: playbooks/release/run.yaml
-    required-projects:
-      - ansible-network/releases
     nodeset:
       nodes: []
     secrets:
