@@ -99,7 +99,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
@@ -118,7 +118,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
@@ -137,7 +137,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
@@ -156,7 +156,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
@@ -175,7 +175,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
@@ -194,7 +194,7 @@
     run: playbooks/cloud-vpn-integration-tests/run.yaml
     required-projects:
       - name: ansible-network/network-engine
-      - name: ansible-network/aws
+      # - name: ansible-network/aws
       - name: ansible-network/cisco_ios
       - name: ansible-network/vyos
     timeout: 3600
