@@ -93,29 +93,6 @@
 
 # TODO(pabelanger): Refactor everything below, most of this can be placed into untrusted jobs    
 - job:
-    name: base-controller-appliance-minimal-test
-    parent: null
-    description: |
-      A job to test changes to the base-controller-appliance-minimal job without
-      disturbing the main job in production.  Not for general use.
-    pre-run: playbooks/base-controller-appliance-minimal-test/pre.yaml
-    post-run:
-      - playbooks/base-controller-appliance-minimal-test/post.yaml
-    roles:
-      - zuul: sf-jobs
-      - zuul: openstack-infra/zuul-jobs
-    post-timeout: 1800
-    timeout: 1800
-    secrets:
-      - site_ansiblelogs
-    nodeset:
-      nodes:
-        - name: controller
-          label: ansible-fedora-28-4vcpu
-        - name: appliance
-          label: ansible-network-vqfx
-
-- job:
     name: cloud-vpn-aws-csr-to-aws-vpn
     description: Run cloud-vpn AWS CSR to AWS VPN tests
     pre-run: playbooks/cloud-vpn-integration-tests/pre.yaml
@@ -228,19 +205,3 @@
     vars:
       test_entrypoint: test_aws_vyos_to_aws_vyos_bgp.yaml
       test_options: "-e 'cloud_vpn_initiator_aws_region=us-east-1 cloud_vpn_responder_aws_region=us-east-1 cloud_vpn_initiator_image_id=ami-92e86ae8 cloud_vpn_responder_image_id=ami-92e86ae8'"
-
-- job:
-    name: ansible-role-tests-vqfx-base
-    description: Ansible role tests on VQFX appliance base job
-    parent: base-controller-appliance-minimal-test
-    pre-run: playbooks/ansible-role-tests-vqfx-base/pre-run.yaml
-    run: playbooks/ansible-role-tests-vqfx-base/run.yaml
-    timeout: 3600
-    secrets:
-      - ansible_images
-    nodeset:
-      nodes:
-        - name: controller
-          label: ansible-fedora-28-4vcpu
-        - name: appliance
-          label: ansible-network-vqfx
