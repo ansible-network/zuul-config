@@ -75,34 +75,6 @@
         - ansible-network-tox-py37
 
 - project:
-    name: github.com/ansible-network/yang
-    templates:
-      - ansible-python-jobs
-      - ansible-role-tag-jobs
-    check:
-      jobs:
-        - ansible-network-tox-py27:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-        - ansible-network-tox-py36:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-        - ansible-network-tox-py37:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-    gate:
-      jobs:
-        - ansible-network-tox-py27:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-        - ansible-network-tox-py36:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-        - ansible-network-tox-py37:
-            required-projects:
-              - name: github.com/ansible-network/network-engine
-
-- project:
     name: github.com/ansible-network/zuul-config
     templates:
       - ansible-python-jobs
