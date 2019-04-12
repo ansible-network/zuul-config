@@ -33,7 +33,3 @@
     templates:
       - ansible-python-jobs
       - build-tox-docs
-
-- project:
-    name: github.com/ansible/ansible
-    default-branch: devel
