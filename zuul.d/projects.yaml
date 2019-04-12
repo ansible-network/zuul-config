@@ -29,23 +29,6 @@
         - cloud-vpn-aws-vyos-to-aws-vyos-bgp
 
 - project:
-    name: github.com/ansible-network/network-engine
-    default-branch: devel
-    templates:
-      - ansible-python-jobs
-      - ansible-role-tag-jobs
-    check:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
-    gate:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
-
-- project:
     name: github.com/ansible-network/zuul-config
     templates:
       - ansible-python-jobs
