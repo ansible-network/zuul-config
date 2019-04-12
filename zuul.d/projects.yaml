@@ -75,22 +75,6 @@
         - ansible-network-tox-py37
 
 - project:
-    name: github.com/ansible-network/vyos
-    templates:
-      - ansible-python-jobs
-      - ansible-role-tag-jobs
-    check:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
-    gate:
-      jobs:
-        - ansible-network-tox-py27
-        - ansible-network-tox-py36
-        - ansible-network-tox-py37
-
-- project:
     name: github.com/ansible-network/yang
     templates:
       - ansible-python-jobs
