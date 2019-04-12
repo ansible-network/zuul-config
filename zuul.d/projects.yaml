@@ -7,28 +7,6 @@
       - system-required
 
 - project:
-    name: github.com/ansible-network/cloud_vpn
-    default-branch: devel
-    templates:
-      - ansible-python-jobs
-    check:
-      jobs:
-        - cloud-vpn-aws-csr-to-aws-vpn
-        - cloud-vpn-aws-csr-to-aws-vpn-bgp
-        - cloud-vpn-aws-csr-to-aws-vyos
-        - cloud-vpn-aws-vyos-to-aws-vpn
-        - cloud-vpn-aws-vyos-to-aws-vyos
-        - cloud-vpn-aws-vyos-to-aws-vyos-bgp
-    gate:
-      jobs:
-        - cloud-vpn-aws-csr-to-aws-vpn
-        - cloud-vpn-aws-csr-to-aws-vpn-bgp
-        - cloud-vpn-aws-csr-to-aws-vyos
-        - cloud-vpn-aws-vyos-to-aws-vpn
-        - cloud-vpn-aws-vyos-to-aws-vyos
-        - cloud-vpn-aws-vyos-to-aws-vyos-bgp
-
-- project:
     name: github.com/ansible-network/zuul-config
     templates:
       - noop-jobs
