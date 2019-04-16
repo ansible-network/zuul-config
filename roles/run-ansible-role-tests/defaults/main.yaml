@@ -1,5 +1,0 @@
----
-
-test_inventory: "{{ ansible_user_dir }}/inventory"
-test_entrypoint: test.yaml
-test_options: ""

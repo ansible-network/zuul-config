@@ -1,5 +1,0 @@
----
-- hosts: all
-
-  roles:
-    - role: run-ansible-role-tests

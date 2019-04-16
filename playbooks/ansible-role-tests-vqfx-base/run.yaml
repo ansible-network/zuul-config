@@ -1,7 +1,0 @@
----
-
-- hosts: controller
-  gather_facts: no
-
-  roles:
-    - role: run-ansible-role-tests

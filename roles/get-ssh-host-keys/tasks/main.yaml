@@ -1,4 +1,0 @@
----
-
-- name: Get appliance SSH host keys and put them on known_hosts
-  shell: "ssh-keyscan {{ host }} >> {{ ansible_user_dir }}/.ssh/known_hosts"
