@@ -1,3 +1,0 @@
-flake8
-sphinx<1.8.0
-zuul-sphinx>=0.2.0

@@ -1,6 +1,9 @@
-Ansible Networking Config Files
-===============================
+This project is no longer maintained.
 
-This repo contains a set of config files that are consumed by Zuul
-and infrastructure released services. You should edit theses files
-to make configuration changes to the Ansible Network Infrastructure.
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
+
+For any further questions, please email ansible-devel@googlegroups.com
+or join #ansible-devel on Freenode.

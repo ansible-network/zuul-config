@@ -1,4 +1,0 @@
----
-
-- name: Install network-engine with Ansible galaxy
-  command: /home/zuul-worker/.local/bin/ansible-galaxy install ansible-network.network-engine

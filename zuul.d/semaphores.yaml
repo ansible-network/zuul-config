@@ -1,6 +1,0 @@
-- semaphore:
-    name: cloud-vpn-aws-to-aws-us-east-1
-    max: 2
-- semaphore:
-    name: cloud-vpn-aws-to-aws-us-east-2
-    max: 2
