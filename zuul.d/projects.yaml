@@ -1,10 +1,8 @@
 ---
 - project:
-    # NOTE(pabelanger): All projects in ansible-network must run
-    # system-required project-template
-    name: ^github.com/ansible-network/.*
+    name: github.com/ansible-network/ansible-zuul-jobs
     templates:
-      - system-required
+      - noop-jobs
 
 - project:
     name: github.com/ansible-network/zuul-config
