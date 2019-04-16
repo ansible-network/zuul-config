@@ -1,10 +1,19 @@
 ---
 - project:
     name: github.com/ansible-network/ansible-zuul-jobs
-    templates:
-      - noop-jobs
+    check:
+      jobs:
+        - noop
+    gate:
+      jobs:
+        - noop
 
 - project:
     name: github.com/ansible-network/zuul-config
-    templates:
-      - noop-jobs
+    check:
+      jobs:
+        - noop
+    gate:
+      jobs:
+        - noop
+
